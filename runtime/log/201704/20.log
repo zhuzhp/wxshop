@@ -26874,3 +26874,54 @@
 [ sql ] [ SQL ] SELECT * FROM `hsq_text` WHERE  `uid` = 1 ORDER BY `update_time`  desc LIMIT 0,15 [ RunTime:0.001000s ]
 
 ---------------------------------------------------------------
+[ 2017-04-20T15:11:23+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/response/index/id/1.html
+[ log ] wxshop.com/admin/response/index/id/1.html [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,648.65kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'response',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/wxset/index/id/1.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=rlffo3fub8tal1rhjg54mu3o13',
+)
+[ info ] [ PARAM ] array (
+  '/admin/response/index/id/1_html' => '',
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Response->index[ D:\www\wxshop\application\admin\controller\Response.php ]
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\response\index.html [ array (
+  0 => 'params',
+  1 => 'info',
+  2 => 'title',
+  3 => 'auth_access',
+  4 => 'role_id',
+  5 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_wxapi` [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_wxapi` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.011000s ]
+
+---------------------------------------------------------------
