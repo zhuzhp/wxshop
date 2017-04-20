@@ -1,0 +1,1958 @@
+[ 2017-04-14T09:12:37+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] wxshop.com/ [运行时间：0.201753s][吞吐率：4.96req/s] [内存消耗：2,785.25kb] [文件加载：43]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\www\wxshop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T09:12:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/login/index.html
+[ log ] wxshop.com/admin/login/index.html [运行时间：0.226593s][吞吐率：4.41req/s] [内存消耗：2,758.03kb] [文件加载：41]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\wxshop\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T09:12:41+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ log ] wxshop.com/captcha.html [运行时间：0.259405s][吞吐率：3.85req/s] [内存消耗：2,152.27kb] [文件加载：32]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\wxshop\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T09:12:43+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html?x=0.8613367690256764
+[ log ] wxshop.com/captcha.html?x=0.8613367690256764 [运行时间：0.128424s][吞吐率：7.79req/s] [内存消耗：2,152.39kb] [文件加载：32]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'x' => '0.8613367690256764',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\wxshop\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T09:12:44+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html?x=0.26674452291245676
+[ log ] wxshop.com/captcha.html?x=0.26674452291245676 [运行时间：0.098978s][吞吐率：10.10req/s] [内存消耗：2,152.38kb] [文件加载：32]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'x' => '0.26674452291245676',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\wxshop\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T09:12:46+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html?x=0.23295361966793715
+[ log ] wxshop.com/captcha.html?x=0.23295361966793715 [运行时间：0.123948s][吞吐率：8.07req/s] [内存消耗：2,152.35kb] [文件加载：32]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'x' => '0.23295361966793715',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\wxshop\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T09:12:51+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/login/index.html
+[ log ] wxshop.com/admin/login/index.html [运行时间：0.660618s][吞吐率：1.51req/s] [内存消耗：4,773.78kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '85',
+  'accept' => '*/*',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/index_html' => '',
+  'username' => 'admin',
+  'password' => '111111',
+  'verify' => 'apcy',
+  '__token__' => '13a814cb073682921e6c7e119f4fd88b',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\wxshop\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.030954s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_user` [ RunTime:0.069598s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_user` WHERE  `username` = 'admin'  AND `password` = '96e79218965eb72c92a549dd5a330112' LIMIT 1 [ RunTime:0.013324s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.021054s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_role` [ RunTime:0.011476s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_role` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001757s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T09:12:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/index.html
+[ log ] wxshop.com/admin/index/index.html [运行时间：0.269110s][吞吐率：3.72req/s] [内存消耗：3,327.81kb] [文件加载：44]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\www\wxshop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'auth_access',
+  1 => 'role_id',
+  2 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T09:13:04+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/wxapi/index.html
+[ log ] wxshop.com/admin/wxapi/index.html [运行时间：0.759173s][吞吐率：1.32req/s] [内存消耗：4,958.87kb] [文件加载：55]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'wxapi',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/wxapi/index_html' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Wxapi->index[ D:\www\wxshop\application\admin\controller\Wxapi.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\wxapi\index.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'auth_access',
+  3 => 'role_id',
+  4 => 'nav',
+  5 => 'wx_type',
+  6 => 'wx_type_list',
+  7 => 'params',
+  8 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004278s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_wxapi` [ RunTime:0.012743s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `hsq_wxapi` LIMIT 1 [ RunTime:0.008627s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_wxapi` ORDER BY `id`  asc LIMIT 0,15 [ RunTime:0.003719s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T09:13:11+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/wxapi/getoken/id/1.html
+[ log ] wxshop.com/admin/wxapi/getoken/id/1.html [运行时间：0.412053s][吞吐率：2.43req/s] [内存消耗：4,751.28kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'wxapi',
+    2 => 'getoken',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/wxapi/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/wxapi/getoken/id/1_html' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Wxapi->getoken[ D:\www\wxshop\application\admin\controller\Wxapi.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\wxapi\getoken.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'auth_access',
+  3 => 'role_id',
+  4 => 'nav',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004664s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_wxapi` [ RunTime:0.007624s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`token`,`appId`,`appSecret`,`encodingAESKey`,`access_token`,`expires_in` FROM `hsq_wxapi` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.003465s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T09:13:15+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/wxapi/getoken.html
+[ log ] wxshop.com/admin/wxapi/getoken.html [运行时间：1.884301s][吞吐率：0.53req/s] [内存消耗：4,901.24kb] [文件加载：56]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'wxapi',
+    2 => 'getoken',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '359',
+  'accept' => '*/*',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/wxapi/getoken/id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/wxapi/getoken_html' => '',
+  'id' => '1',
+  'name' => '浐灞半岛',
+  'token' => 'wangjiuwang',
+  'encodingAESKey' => 'mtig1MtBdvlFdFqbftyg2xY15N3WOSMDFNW9hcmcbf1',
+  'appId' => 'wx7b739a344a69a410',
+  'appSecret' => '9296286bb73ac0391d2eaf2b668c668a',
+  'access_token' => 'OAaOTPYPUT_-yMJJWG8igCBc6U11YnUEiL-EIATKEottKjAqjKxCTNAP-dTSFoD3vLDc0zVKT8BNiFzgPq9fqkA5Rdo7BaaTSHwVHXFxP4gOiUDwXzu0eP4Mmv87cnrmDYAkCJASNP',
+  'expires_in' => '7200',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Wxapi->getoken[ D:\www\wxshop\application\admin\controller\Wxapi.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003382s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_wxapi` [ RunTime:0.006058s ]
+[ sql ] [ SQL ] SELECT `token_time`,`expires_in` FROM `hsq_wxapi` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001387s ]
+[ sql ] [ SQL ] UPDATE `hsq_wxapi`  SET `access_token`='RukHTZzGeeYs0BlC7bQoUOaXw906Z8ZuszsSap7RqVUpVQyvKXziI6KNCr7IYgUW_YFpea3mSvkEVCMv_AbcHZDQjTGUaz4NB6NbTPF_SgRkoGvHAP3ZcRMIlYZuve1ISPUeCDAZWB',`expires_in`=7200,`token_time`=1492132395,`update_time`=1492132395  WHERE  `id` = 1 [ RunTime:0.016637s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T09:13:18+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/wxapi/getoken/id/1.html
+[ log ] wxshop.com/admin/wxapi/getoken/id/1.html [运行时间：0.353411s][吞吐率：2.83req/s] [内存消耗：4,751.15kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'wxapi',
+    2 => 'getoken',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/wxapi/getoken/id/1.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/wxapi/getoken/id/1_html' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Wxapi->getoken[ D:\www\wxshop\application\admin\controller\Wxapi.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\wxapi\getoken.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'auth_access',
+  3 => 'role_id',
+  4 => 'nav',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005766s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_wxapi` [ RunTime:0.007877s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`token`,`appId`,`appSecret`,`encodingAESKey`,`access_token`,`expires_in` FROM `hsq_wxapi` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001995s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T09:13:26+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/wxapi/getoken.html
+[ log ] wxshop.com/admin/wxapi/getoken.html [运行时间：0.429754s][吞吐率：2.33req/s] [内存消耗：4,744.92kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'wxapi',
+    2 => 'getoken',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '359',
+  'accept' => '*/*',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/wxapi/getoken/id/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/wxapi/getoken_html' => '',
+  'id' => '1',
+  'name' => '浐灞半岛',
+  'token' => 'wangjiuwang',
+  'encodingAESKey' => 'mtig1MtBdvlFdFqbftyg2xY15N3WOSMDFNW9hcmcbf1',
+  'appId' => 'wx7b739a344a69a410',
+  'appSecret' => '9296286bb73ac0391d2eaf2b668c668a',
+  'access_token' => 'RukHTZzGeeYs0BlC7bQoUOaXw906Z8ZuszsSap7RqVUpVQyvKXziI6KNCr7IYgUW_YFpea3mSvkEVCMv_AbcHZDQjTGUaz4NB6NbTPF_SgRkoGvHAP3ZcRMIlYZuve1ISPUeCDAZWB',
+  'expires_in' => '7200',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Wxapi->getoken[ D:\www\wxshop\application\admin\controller\Wxapi.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003697s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_wxapi` [ RunTime:0.005869s ]
+[ sql ] [ SQL ] SELECT `token_time`,`expires_in` FROM `hsq_wxapi` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.001320s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T09:13:29+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/wxapi/getoken/id/1.html
+[ log ] wxshop.com/admin/wxapi/getoken/id/1.html [运行时间：0.446650s][吞吐率：2.24req/s] [内存消耗：4,751.15kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'wxapi',
+    2 => 'getoken',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/wxapi/getoken/id/1.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/wxapi/getoken/id/1_html' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Wxapi->getoken[ D:\www\wxshop\application\admin\controller\Wxapi.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\wxapi\getoken.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'auth_access',
+  3 => 'role_id',
+  4 => 'nav',
+  5 => 'info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010352s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_wxapi` [ RunTime:0.007903s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`token`,`appId`,`appSecret`,`encodingAESKey`,`access_token`,`expires_in` FROM `hsq_wxapi` WHERE  (  id=1 ) LIMIT 1 [ RunTime:0.002939s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T16:49:52+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ log ] wxshop.com/admin/order/index.html [运行时间：0.297174s][吞吐率：3.37req/s] [内存消耗：2,823.70kb] [文件加载：43]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/wxapi/getoken/id/1.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/order/index_html' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\www\wxshop\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'code',
+  3 => 'msg',
+  4 => 'data',
+  5 => 'url',
+  6 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T16:49:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/login/index.html
+[ log ] wxshop.com/admin/login/index.html [运行时间：0.126793s][吞吐率：7.89req/s] [内存消耗：2,758.13kb] [文件加载：41]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/order/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/index_html' => '',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\wxshop\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T16:49:55+08:00 ] 127.0.0.1 127.0.0.1 GET /captcha.html
+[ log ] wxshop.com/captcha.html [运行时间：0.229026s][吞吐率：4.37req/s] [内存消耗：2,152.35kb] [文件加载：32]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/captcha_html' => '',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\www\wxshop\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T16:50:01+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/login/index.html
+[ log ] wxshop.com/admin/login/index.html [运行时间：0.238653s][吞吐率：4.19req/s] [内存消耗：4,773.78kb] [文件加载：53]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '85',
+  'accept' => '*/*',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/login/index_html' => '',
+  'username' => 'admin',
+  'password' => '111111',
+  'verify' => '5bba',
+  '__token__' => 'fd2b7effbb8cb1c5616770ff32043b8d',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\wxshop\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018368s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_user` [ RunTime:0.012543s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_user` WHERE  `username` = 'admin'  AND `password` = '96e79218965eb72c92a549dd5a330112' LIMIT 1 [ RunTime:0.002318s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003799s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_role` [ RunTime:0.013857s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_role` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001426s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T16:50:03+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/index.html
+[ log ] wxshop.com/admin/index/index.html [运行时间：0.167662s][吞吐率：5.96req/s] [内存消耗：3,327.81kb] [文件加载：44]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/index/index_html' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\www\wxshop\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\index\index.html [ array (
+  0 => 'auth_access',
+  1 => 'role_id',
+  2 => 'nav',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-14T16:50:06+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ log ] wxshop.com/admin/order/index.html [运行时间：0.308865s][吞吐率：3.24req/s] [内存消耗：4,922.64kb] [文件加载：55]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/order/index_html' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Order->index[ D:\www\wxshop\application\admin\controller\Order.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\order\index.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'auth_access',
+  3 => 'role_id',
+  4 => 'nav',
+  5 => 'params',
+  6 => 'pay_status',
+  7 => 'ship_status',
+  8 => 'pay_status_list',
+  9 => 'ship_status_list',
+  10 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004644s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_order` [ RunTime:0.018283s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `hsq_order` WHERE  `if_del` = 0 LIMIT 1 [ RunTime:0.001664s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_order` WHERE  `if_del` = 0 ORDER BY `update_time`  desc LIMIT 0,15 [ RunTime:0.002341s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T16:50:09+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/order/goodslist/id/1.html
+[ log ] wxshop.com/admin/order/goodslist/id/1.html [运行时间：0.285981s][吞吐率：3.50req/s] [内存消耗：4,904.05kb] [文件加载：55]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => 'goodslist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/order/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/order/goodslist/id/1_html' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Order->goodslist[ D:\www\wxshop\application\admin\controller\Order.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\order\goodslist.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'auth_access',
+  3 => 'role_id',
+  4 => 'nav',
+  5 => 'params',
+  6 => 'orderid',
+  7 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003976s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_ordergoods` [ RunTime:0.011881s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `hsq_ordergoods` WHERE  `orderid` = 1 LIMIT 1 [ RunTime:0.001429s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_ordergoods` WHERE  `orderid` = 1 ORDER BY `update_time`  desc LIMIT 0,15 [ RunTime:0.001631s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T16:50:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ log ] wxshop.com/admin/order/index.html [运行时间：0.249728s][吞吐率：4.00req/s] [内存消耗：4,922.62kb] [文件加载：55]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/order/goodslist/id/1.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/order/index_html' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Order->index[ D:\www\wxshop\application\admin\controller\Order.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\order\index.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'auth_access',
+  3 => 'role_id',
+  4 => 'nav',
+  5 => 'params',
+  6 => 'pay_status',
+  7 => 'ship_status',
+  8 => 'pay_status_list',
+  9 => 'ship_status_list',
+  10 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005993s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_order` [ RunTime:0.007514s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `hsq_order` WHERE  `if_del` = 0 LIMIT 1 [ RunTime:0.001526s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_order` WHERE  `if_del` = 0 ORDER BY `update_time`  desc LIMIT 0,15 [ RunTime:0.002120s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:12+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/article/index.html
+[ log ] wxshop.com/admin/article/index.html [运行时间：0.308308s][吞吐率：3.24req/s] [内存消耗：4,940.14kb] [文件加载：55]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/order/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->index[ D:\www\wxshop\application\admin\controller\Article.php ]
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\article\index.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'categorylist',
+  3 => 'auth_access',
+  4 => 'role_id',
+  5 => 'nav',
+  6 => 'params',
+  7 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005136s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 0 and catetype='article' [ RunTime:0.012829s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 1 and catetype='article' [ RunTime:0.001790s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 3 and catetype='article' [ RunTime:0.001385s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 7 and catetype='article' [ RunTime:0.001420s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 10 and catetype='article' [ RunTime:0.001384s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 8 and catetype='article' [ RunTime:0.001408s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 6 and catetype='article' [ RunTime:0.001450s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 9 and catetype='article' [ RunTime:0.001206s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 12 and catetype='article' [ RunTime:0.000993s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 2 and catetype='article' [ RunTime:0.001105s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 4 and catetype='article' [ RunTime:0.001486s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 11 and catetype='article' [ RunTime:0.001645s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_article` [ RunTime:0.012002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `hsq_article` LIMIT 1 [ RunTime:0.001113s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_article` ORDER BY `update_time`  desc LIMIT 0,15 [ RunTime:0.002334s ]
+[ sql ] [ SQL ] select catename from hsq_category where id=3 limit 1 [ RunTime:0.001271s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/article_category/index.html
+[ log ] wxshop.com/admin/article_category/index.html [运行时间：0.365829s][吞吐率：2.73req/s] [内存消耗：5,266.77kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/article/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/index_html' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\ArticleCategory->index[ D:\www\wxshop\application\admin\controller\ArticleCategory.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\article_category\index.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'auth_access',
+  3 => 'role_id',
+  4 => 'nav',
+  5 => 'params',
+  6 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003996s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.007207s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `hsq_category` WHERE  `pid` = 0  AND `catetype` = 'article' LIMIT 1 [ RunTime:0.001845s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 0  AND `catetype` = 'article' ORDER BY `sort`  asc LIMIT 0,15 [ RunTime:0.001833s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:16+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.179243s][吞吐率：5.58req/s] [内存消耗：4,621.81kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003348s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.006524s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 1 ORDER BY `sort`  asc [ RunTime:0.001365s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:17+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.176032s][吞吐率：5.68req/s] [内存消耗：4,621.52kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003294s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.006587s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 3 ORDER BY `sort`  asc [ RunTime:0.001647s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:19+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.179004s][吞吐率：5.59req/s] [内存消耗：4,621.05kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '7',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004045s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.005278s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 7 ORDER BY `sort`  asc [ RunTime:0.001507s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:20+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.165009s][吞吐率：6.06req/s] [内存消耗：4,619.57kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003188s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.005822s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 10 ORDER BY `sort`  asc [ RunTime:0.001293s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:23+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.180715s][吞吐率：5.53req/s] [内存消耗：4,621.52kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '2',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003437s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.005151s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 2 ORDER BY `sort`  asc [ RunTime:0.001840s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:24+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.153136s][吞吐率：6.53req/s] [内存消耗：4,619.57kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '4',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003289s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.004703s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 4 ORDER BY `sort`  asc [ RunTime:0.001468s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:25+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.181425s][吞吐率：5.51req/s] [内存消耗：4,619.57kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '11',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003280s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.005518s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 11 ORDER BY `sort`  asc [ RunTime:0.001279s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:29+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.182421s][吞吐率：5.48req/s] [内存消耗：4,621.81kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004288s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.007639s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 1 ORDER BY `sort`  asc [ RunTime:0.001405s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:30+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.157934s][吞吐率：6.33req/s] [内存消耗：4,621.52kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '3',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003390s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.005222s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 3 ORDER BY `sort`  asc [ RunTime:0.001528s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:31+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.202775s][吞吐率：4.93req/s] [内存消耗：4,621.05kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '7',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011426s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.006077s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 7 ORDER BY `sort`  asc [ RunTime:0.001293s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:33+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.181309s][吞吐率：5.52req/s] [内存消耗：4,619.57kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '8',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003953s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.005734s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 8 ORDER BY `sort`  asc [ RunTime:0.001296s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:35+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.183598s][吞吐率：5.45req/s] [内存消耗：4,621.05kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '6',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003657s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.006539s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 6 ORDER BY `sort`  asc [ RunTime:0.001891s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:37+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.188013s][吞吐率：5.32req/s] [内存消耗：4,619.57kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '4',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '9',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003818s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.004977s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 9 ORDER BY `sort`  asc [ RunTime:0.001264s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:38+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/article_category/unfolded.html
+[ log ] wxshop.com/admin/article_category/unfolded.html [运行时间：0.167358s][吞吐率：5.98req/s] [内存消耗：4,619.57kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article_category',
+    2 => 'unfolded',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'content-length' => '5',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://wxshop.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article_category/unfolded_html' => '',
+  'id' => '12',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Category->unfolded[ D:\www\wxshop\application\admin\controller\Category.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003136s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_category` [ RunTime:0.005388s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_category` WHERE  `pid` = 12 ORDER BY `sort`  asc [ RunTime:0.001358s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:51+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/article/index.html
+[ log ] wxshop.com/admin/article/index.html [运行时间：0.234730s][吞吐率：4.26req/s] [内存消耗：4,940.39kb] [文件加载：55]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->index[ D:\www\wxshop\application\admin\controller\Article.php ]
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\article\index.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'categorylist',
+  3 => 'auth_access',
+  4 => 'role_id',
+  5 => 'nav',
+  6 => 'params',
+  7 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003282s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 0 and catetype='article' [ RunTime:0.001325s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 1 and catetype='article' [ RunTime:0.001073s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 3 and catetype='article' [ RunTime:0.001009s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 7 and catetype='article' [ RunTime:0.001030s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 10 and catetype='article' [ RunTime:0.001284s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 8 and catetype='article' [ RunTime:0.001389s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 6 and catetype='article' [ RunTime:0.001192s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 9 and catetype='article' [ RunTime:0.000968s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 12 and catetype='article' [ RunTime:0.000964s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 2 and catetype='article' [ RunTime:0.000990s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 4 and catetype='article' [ RunTime:0.000990s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 11 and catetype='article' [ RunTime:0.000926s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_article` [ RunTime:0.002416s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `hsq_article` LIMIT 1 [ RunTime:0.001020s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_article` ORDER BY `update_time`  desc LIMIT 0,15 [ RunTime:0.001280s ]
+[ sql ] [ SQL ] select catename from hsq_category where id=3 limit 1 [ RunTime:0.001052s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:08:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/article/add.html
+[ log ] wxshop.com/admin/article/add.html [运行时间：0.270982s][吞吐率：3.69req/s] [内存消耗：4,721.39kb] [文件加载：52]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/article/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article/add_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->add[ D:\www\wxshop\application\admin\controller\Article.php ]
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\article\modify.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'categorylist',
+  3 => 'auth_access',
+  4 => 'role_id',
+  5 => 'nav',
+  6 => 'info',
+  7 => 'modify',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004407s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 0 and catetype='article' [ RunTime:0.001950s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 1 and catetype='article' [ RunTime:0.001726s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 3 and catetype='article' [ RunTime:0.001623s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 7 and catetype='article' [ RunTime:0.001623s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 10 and catetype='article' [ RunTime:0.001396s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 8 and catetype='article' [ RunTime:0.001430s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 6 and catetype='article' [ RunTime:0.001186s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 9 and catetype='article' [ RunTime:0.001559s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 12 and catetype='article' [ RunTime:0.001280s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 2 and catetype='article' [ RunTime:0.001985s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 4 and catetype='article' [ RunTime:0.001631s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 11 and catetype='article' [ RunTime:0.001522s ]
+
+---------------------------------------------------------------
+[ 2017-04-14T17:09:07+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/article/index.html
+[ log ] wxshop.com/admin/article/index.html [运行时间：0.307008s][吞吐率：3.26req/s] [内存消耗：4,940.18kb] [文件加载：55]
+[ info ] [ LANG ] D:\www\wxshop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'wxshop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://wxshop.com/admin/article_category/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=c3bvu2uka712jujpnla9noalr2',
+)
+[ info ] [ PARAM ] array (
+  '/admin/article/index_html' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Article->index[ D:\www\wxshop\application\admin\controller\Article.php ]
+[ info ] [ VIEW ] D:\www\wxshop\public/../application/admin\view\article\index.html [ array (
+  0 => 'title',
+  1 => 'tablename',
+  2 => 'categorylist',
+  3 => 'auth_access',
+  4 => 'role_id',
+  5 => 'nav',
+  6 => 'params',
+  7 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003686s ] mysql:dbname=wxshop;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 0 and catetype='article' [ RunTime:0.001345s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 1 and catetype='article' [ RunTime:0.001023s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 3 and catetype='article' [ RunTime:0.001288s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 7 and catetype='article' [ RunTime:0.001757s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 10 and catetype='article' [ RunTime:0.001393s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 8 and catetype='article' [ RunTime:0.001520s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 6 and catetype='article' [ RunTime:0.001314s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 9 and catetype='article' [ RunTime:0.001212s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 12 and catetype='article' [ RunTime:0.001202s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 2 and catetype='article' [ RunTime:0.001203s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 4 and catetype='article' [ RunTime:0.001399s ]
+[ sql ] [ SQL ] select id,catename,pid from hsq_category where pid= 11 and catetype='article' [ RunTime:0.001508s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `hsq_article` [ RunTime:0.006104s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `hsq_article` LIMIT 1 [ RunTime:0.001060s ]
+[ sql ] [ SQL ] SELECT * FROM `hsq_article` ORDER BY `update_time`  desc LIMIT 0,15 [ RunTime:0.001381s ]
+[ sql ] [ SQL ] select catename from hsq_category where id=3 limit 1 [ RunTime:0.001027s ]
+
+---------------------------------------------------------------

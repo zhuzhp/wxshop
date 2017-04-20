@@ -1,0 +1,117 @@
+{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Memberinfo"/}
+{assign name="activenav" value="Member/index"/}
+{/block}
+{block name="main"}
+<div class="bg-primary-dark">
+    <section class="content content-full content-boxed">
+        <!-- Section Content -->
+        <div class="push-30-t push-20 text-center">
+            <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Support Center.</h1>
+            <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Building products is not our only job. We care about our clients.</h2>
+        </div>
+        <!-- END Section Content -->
+    </section>
+</div>
+<!-- END Hero Content -->
+<div class="bg-white">
+    <section class="content content-boxed overflow-hidden">
+        <div class="content-grid">
+            <form id="orderForm" action="{:url($tablename.'/index')}" method="get">
+                <div class="form-inline">
+                    <div class="input-group push-5">
+                        <a href="{:url($tablename.'/modify',['member_id'=>$member_id])}" class="btn btn-sm btn-default">添加收货地址</a>
+                    </div>
+                    <div class="input-group push-5">
+                        <input type="text" class="form-control input-sm" placeholder="搜索联系人|电话" value="{:isset($params['key'])?$params['key']:''}">
+                      <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button" onclick="var v=$(this).parent().prev().val(); location.href='{:url($tablename.'/index', u_pam($params, null, array('page','key')))}?key='+v+'&id='+{$member_id};"> <i class="fa fa-search"></i> </button>
+                      </span>
+                    </div>
+                    <select class="form-control input-sm" onchange="location.href='{:url($tablename.'/index', u_pam($params, null, array('page','pagesize')))}?pagesize='+this.value+'&id='+{$member_id}">
+                        <option value="10" {$params['pagesize']==10?'selected':''}>每页10条</option>
+                        <option value="20" {$params['pagesize']==20?'selected':''}>每页20条</option>
+                        <option value="50" {$params['pagesize']==50?'selected':''}>每页50条</option>
+                        <option value="100" {$params['pagesize']==100?'selected':''}>每页100条</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <table class="js-table-checkable table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center" style="width: 70px;">#</th>
+                            <th>会员账号</th>
+                            <th>联系人</th>
+                            <th>电话</th>
+                            <th style="width: 20%;">地区</th>
+                            <th style="width: 20%;">详细地址</th>
+                            <th>是否默认</th>
+                            <th class="hidden-xs" style="width: 10%;">添加时间</th>
+                            <th style="width: 8%;">操作</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {volist name="list" id="vo"}
+                        <tr class="active">
+                            <td><p class="font-w600 push-5">{$vo.id}</p></td>
+                            <td><p class="text-muted remove-margin-b">{$vo.username}</p></td>
+                            <td><p class="text-muted remove-margin-b">{$vo.contant_person}</p></td>
+                            <td class="hidden-xs"><em class="text-muted">{$vo['tel']}</em></td>
+                            <td class="hidden-xs"><em class="text-muted">{:getAddressById($vo['area_id'])}</em></td>
+                            <td class="hidden-xs"><em class="text-muted">{$vo['address']}</em></td>
+                            <td class="hidden-xs"><em class="text-muted">{$vo['if_default']}</em></td>
+                            <td class="hidden-xs"><em class="text-muted">{$vo['update_time']}</em></td>
+                            <td>
+                                <a href="{:url($tablename.'/modify',['id'=>$vo['id'],'member_id'=>$vo['member_id']])}" class="btn btn-xs btn-default modify-one" type="button" data-toggle="tooltip" title="" data-original-title="修改"><i class="fa fa-pencil"></i></a>
+                                <a data-href="{:url($tablename.'/delete',['id'=>$vo['id'],'member_id'=>$vo['member_id']])}" class="btn btn-xs btn-default delete-one" type="button" data-toggle="tooltip" title="" data-original-title="删除"><i class="fa fa-times"></i></a>
+                            </td>
+                        </tr>
+                        {/volist}
+                        </tbody>
+
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="dataTables_info" style="padding-top: 24px;">当前 <strong>{$list->currentPage()}</strong>/<strong>{$list->lastPage()}</strong> 共 <strong> {$list->total()}</strong>条记录</div>
+                    </div>
+                    <div class="col-sm-6"  style="text-align: right;">
+                        <div class="dataTables_paginate paging_simple_numbers">
+                            {$list->render()}
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+{/block}
+{block name="footer"}
+<!-- Top Modal -->
+
+<!-- END Top Modal -->
+{/block}
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script>
+    $(function () {
+        // Init page helpers (Table Tools helper)
+        App.initHelpers('table-tools');
+        App.initHelpers('notify');
+        $(".delete-one").click(function(){
+            var url = $(this).attr("data-href");
+            if( !confirm('你确定要删除该条数据吗？') ){
+                return false;
+            }
+            getUrl(url);
+        });
+    });
+</script>
+{/block}

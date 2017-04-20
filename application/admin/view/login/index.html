@@ -1,0 +1,80 @@
+﻿{extend name="public/base" /}
+
+{block name="title"}登录{/block}
+{block name="main"}
+<div class="bg-primary-dark">
+      <section class="content content-full content-boxed overflow-hidden">
+        <!-- Section Content -->
+        <div class="push-100-t push-50 text-center">
+          <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Log in to your dashboard.</h1>
+          <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Unlimited ideas. Unlimited power. Unlimited joy. Unlimited opportunities.</h2>
+        </div>
+        <!-- END Section Content -->
+      </section>
+    </div>
+    <!-- END Hero Content -->
+    <!-- Log In Form -->
+    <div class="bg-white">
+      <section class="content content-boxed">
+        <!-- Section Content -->
+        <div class="row items-push push-50-t push-30">
+          <div class="col-md-6 col-md-offset-3">
+			<form class="form-horizontal js-validation-login" action="{:url('Login/index')}" id="frmUserInfo" novalidate method="post">
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <div class="form-material form-material-primary">
+                    <input class="form-control" type="text" id="username" name="username" placeholder="输入你的用户名.." />
+                    <label for="username">用户名</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <div class="form-material form-material-primary">
+                    <input class="form-control" type="password" id="password" name="password" placeholder="输入登录密码" />
+                    <label for="password">密码</label>
+                  </div>
+                </div>
+              </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="form-material form-material-primary">
+                            <input class="form-control" type="text" name="verify" id="verify"  placeholder="输入验证码" data-error="验证码错误" style="width:70%;float:left" />
+                            <img src="{:captcha_src()}" onclick="this.src='{:captcha_src()}?x='+Math.random();" style="float：right;" alt="验证码" />
+                            <label for="verify">验证码</label>
+                        </div>
+                    </div>
+                </div>
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                  <button class="btn btn-block btn-primary" type="submit"><i class="fa fa-arrow-right pull-right"></i>登录</button>
+                </div>
+              </div>
+                <input type="hidden" name="__token__" value="{$Request.token}" />
+            </form>
+          </div>
+        </div>
+        <!-- END Section Content -->
+      </section>
+    </div>
+    <!-- END Log In Form -->
+    <!-- Sign Up Today -->
+    <!-- <div class="bg-gray-lighter">
+      <section class="content content-full content-boxed">
+        <div class="push-20-t push-20 text-center">
+          <h3 class="h4 push-20 visibility-hidden" data-toggle="appear">没有账户?</h3>
+          <a class="btn btn-rounded btn-noborder btn-lg btn-success visibility-hidden" data-toggle="appear" data-class="animated bounceIn" href="frontend_signup.html">马上注册</a> </div>
+      </section>
+    </div>-->
+{/block}
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script src="{:Config('public')}assets/js/pages/pages_form_login.js"></script>
+<script>
+$(function () {
+	App.initHelpers('notify');
+});
+</script>
+{/block}

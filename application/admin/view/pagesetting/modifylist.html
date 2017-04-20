@@ -1,0 +1,94 @@
+﻿{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="System"/}
+{assign name="activenav" value="Pagesetting/index"/}
+{/block}
+{block name="main"}
+<div class="bg-primary-dark">
+  <section class="content content-full content-boxed">
+    <!-- Section Content -->
+    <div class="push-30-t push-20 text-center">
+      <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Support Center.</h1>
+      <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Building products is not our only job. We care about our clients.</h2>
+    </div>
+    <!-- END Section Content -->
+  </section>
+</div>
+<!-- END Hero Content -->
+<div class="bg-white">
+<form action="{:url($tablename.'/modifylistupdatesort',['id'=>$settinginfo['id']])}" method="post">
+  <section class="content content-boxed overflow-hidden">
+    <div class="content-grid">
+      <div class="form-inline">
+        <div class="input-group push-5"><a class="btn btn-sm btn-default" href="{:url($tablename.'/modifylistvalue',['id'=>$settinginfo['id']])}">添加{$title}</a><span style="display:inline-block; width:20px; text-align:center; color:#ddd;">|</span><button class="btn btn-sm btn-default" type="submit">修改排序</button></div>
+      </div>
+      <div class="row">
+        <table class="js-table-checkable table table-hover">
+          <thead>
+          <tr>
+            <th class="text-center" style="width: 70px;"># </th>
+			<th style="width: 70px;">排序</th>
+            <th>标题</th>			
+            <th style="width: 15%;">操作时间</th>
+            <th class="text-center" style="width: 120px;">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+		 {volist name="list" id="vo"}
+        <tr>
+          <td class="text-center">{$vo['id']} </td>
+		  <td><input style="width:70px;" value="{$vo['sort']}" name="sort[{$vo['id']}]" /></td>
+          <td><p class="font-w600 push-10">{$vo['title']}</p></td>
+          <td><em class="text-muted">{$vo['update_time']}</em> </td>
+          <td class="text-center"><div class="btn-group">
+              <a href="{:url($tablename.'/modifylistvalue',['editid'=>$vo['id'],'id'=>$settinginfo['id']])}" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="修改"><i class="fa fa-pencil"></i></a>
+              <a data-href="{:url($tablename.'/modifylistdelete',['id'=>$vo['id'],'pid'=>$settinginfo['id']])}" class="btn btn-xs btn-default delete-one" type="button" data-toggle="tooltip" title="" data-original-title="删除"><i class="fa fa-times"></i></a>
+            </div></td>
+        </tr>
+        {/volist}    
+        </tbody>
+          
+        </table>
+      </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="dataTables_info" style="padding-top: 24px;">当前 <strong>{$list->currentPage()}</strong>/<strong>{$list->lastPage()}</strong> 共 <strong> {$list->total()}</strong>条记录</div>
+            </div>
+            <div class="col-sm-6"  style="text-align: right;">
+                <div class="dataTables_paginate paging_simple_numbers">
+                    {$list->render()}
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  </form>
+</div>
+{/block}
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script>
+    $(function () {
+        // Init page helpers (Table Tools helper)
+        App.initHelpers('table-tools');
+        App.initHelpers('notify');
+        $(".delete-one").click(function(){
+            var url = $(this).attr("data-href");
+            if( !confirm('你确定要删除该条数据？') ){
+                return false;
+            }
+            getUrl(url);
+        });
+        $("form").submit(function(){
+            if( !confirm('确定要修改排序？') ){
+                return false;
+            }
+            postListSort($(this));
+            return false;
+        });
+    });
+</script>
+{/block}

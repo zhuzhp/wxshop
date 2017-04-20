@@ -1,0 +1,166 @@
+﻿{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Webdata"/}
+{assign name="activenav" value="Product/index"/}
+{/block}
+{block name="main"}
+<!-- Hero Content -->
+<div class="bg-primary-dark">
+    <section class="content content-full content-boxed">
+        <!-- Section Content -->
+        <div class="push-100-t push-50 text-center">
+            <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Contact Us.</h1>
+            <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Have an awesome idea for a project? Get in touch today.</h2>
+        </div>
+        <!-- END Section Content -->
+    </section>
+</div>
+<!-- END Hero Content -->
+<!-- Contact Form -->
+<div class="bg-white">
+    <section class="content content-boxed">
+        <!-- Section Content -->
+        <div class="row items-push push-50-t push-30">
+            <div class="col-md-6 col-md-offset-3">
+                <form class="js-validation-product form-horizontal push-10-t" action="{:url($tablename.'/'.$modify)}" method="post">
+                    <input type="hidden" name="id" value="{:isset($info['id'])?$info['id']:''}">
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="form-material">
+                                <select class="form-control input-sm" id="cateid" name="cateid">
+                                    {empty name="$info['cateid']"}<option value="">--请选择商品分类--</option>{else /}<option value="{$info['cateid']}">{$info['catename']}</option>{/empty}
+                                    {volist name="categorylist" id="cate"}
+                                        {if condition="$info['cateid'] != $cate['id']"}
+                                        <option value="{$cate.id}"><span>{:indent($cate['level'])}</span>{$cate.catename}</option>
+                                        {/if}
+                                    {/volist}
+                                </select>
+                                <label for="cateid">商品分类</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="form-material">
+                                <input class="form-control" type="text" id="title" name="title" value="{:isset($info['title'])?$info['title']:''}" placeholder="输入商品名称.">
+                                <label for="title">商品名称</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="form-material">
+                                <input class="form-control" type="text" id="price" name="price" value="{:isset($info['price'])?$info['price']:''}" placeholder="输入价格.">
+                                <label for="price">商品价格</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="form-material">
+                                <textarea class="form-control" id="info" name="info" rows="3" placeholder="简要描述.">{:isset($info['info'])?$info['info']:''}</textarea>
+                                <label for="info">商品简介</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="form-material">
+                                <textarea style="height:460px;" id="content" name="content">{:isset($info['content'])?$info['content']:''}</textarea>
+                                <label for="content">商品描述</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <div class="form-material form-material-primary">
+                                <div class="col-md-12 push-20-t" id="imageupload" style="{:isset($info['image'])&&$info['image']?'display:none;':''}">
+                                    <div class="row" id="upload"></div>
+                                </div>
+                                <input type="hidden" name="image" id="image" value="{:isset($info['image'])?$info['image']:''}">
+                                <div class="img-container" style="{:isset($info['image'])&&$info['image']?'':'display:none;'}"> <img class="img-responsive" src="{:isset($info['image'])?$info['image']:''}" alt="">
+                                    <div class="img-options">
+                                        <div class="img-options-content">
+                                            <a class="btn btn-sm btn-default" href="javascript:void(0)"><i class="fa fa-pencil"></i> 修改</a></div>
+                                    </div>
+                                </div>
+                                <label for="image">封面图片</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <button class="btn btn-block btn-primary" type="submit"><i class="fa fa-send pull-left"></i>提交</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-minw btn-info" type="button" onclick="javascript:history.go(-1);">返回</button>
+                        </div>
+                    </div>
+                    <!--<input type="hidden" name="__token__" value="{$Request.token}" />-->
+                </form>
+            </div>
+        </div>
+        <!-- END Section Content -->
+    </section>
+</div>
+<!-- END Contact Form -->
+<!-- Google Maps, initialized in js/pages/frontend_contact.js, for more examples you can check out https://hpneo.github.io/gmaps/ -->
+<div class="bg-white" id="js-map-contact" style="height: 350px;"></div>
+{/block}
+
+{block name="script"}
+<script type="text/javascript" charset="utf-8" src="{:Config('public')}ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="{:Config('public')}ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="{:Config('public')}ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/uploadify/jquery.Huploadify.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script src="{:Config('public')}assets/js/pages/pages_form_product.js"></script>
+<script>
+    $(function () {
+        App.initHelpers('notify');
+        var ue = UE.getEditor('content');
+        $('#upload').Huploadify({
+                    auto:true,
+                    fileTypeExts:'*.jpg;*.png;',
+                    multi:false,
+                    formData:{type:1,key:''},
+                    showUploadedPercent:true,//是否实时显示上传的百分比，如20%
+                    showUploadedSize:true,
+                    uploader:'{:url('File/uploadimg')}',
+                onUploadStart:function(){
+            //alert('开始上传');
+        },
+        onInit:function(){
+            //alert('初始化');
+        },
+        onUploadComplete:function(file,fileurl){
+            fileurl=JSON.parse(fileurl);
+            console.log(fileurl);
+            if(fileurl.code == '1'){
+                errorMesg('上传成功！','成功','success');
+                $("#imageupload").hide();
+                $(".img-container").show();
+                $(".img-container img").attr("src",fileurl.data);
+                $("#image").val(fileurl.data);
+            }else{
+                errorMesg('上传失败！');
+            }
+        },
+        onDelete:function(file){
+            console.log('删除的文件：'+file);
+            console.log(file);
+        }
+    });
+        $(".img-options-content a").click(function(){
+            $("#imageupload").show();
+            $(".img-container").hide();
+        });
+    });
+
+</script>
+{/block}

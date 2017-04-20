@@ -1,0 +1,129 @@
+﻿{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Webdata"/}
+{assign name="activenav" value="Article/index"/}
+{/block}
+{block name="main"}
+<div class="bg-primary-dark">
+  <section class="content content-full content-boxed">
+    <!-- Section Content -->
+    <div class="push-30-t push-20 text-center">
+      <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Support Center.</h1>
+      <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Building products is not our only job. We care about our clients.</h2>
+    </div>
+    <!-- END Section Content -->
+  </section>
+</div>
+<!-- END Hero Content -->
+<div class="bg-white">
+  <section class="content content-boxed overflow-hidden">
+    <div class="content-grid">
+    <form id="articleForm" action="{:url($tablename.'/index')}" method="get">
+      <div class="form-inline">
+        <div class="input-group push-5">
+          <a class="btn btn-sm btn-default" href="{:url($tablename.'/add')}">添加{$title}</a>
+          <span style="display:inline-block; width:20px; text-align:center; color:#ddd;">|</span>
+          <a class="btn btn-sm btn-default" href="{:url('ArticleCategory/index')}">{$title}分类</a>
+        </div>
+        <div class="input-group push-5">
+          <input type="text" class="form-control input-sm" placeholder="搜索文章名称" name="key" value="{:isset($params['key'])?$params['key']:''}">
+          <span class="input-group-btn">
+          <button class="btn btn-sm btn-default" type="button" onclick="$('#articleForm').submit();"> <i class="fa fa-search"></i> </button>
+          </span>
+        </div>
+        <select class="form-control input-sm" name="cateid" onchange="$('#articleForm').submit();">
+          {empty name="$params['cateid']"}<option value="">--请选择文章分类--</option>{else /}<option value="{$params['cateid']}">{:getArticleCateName($params['cateid'])}</option>{/empty}
+          {volist name="categorylist" id="cate"}
+          {if condition="$cate['id'] != $params['cateid']"}
+          <option value="{$cate.id}"><span style="padding-left:{$cate['level']}px;">{:indent($cate['level'])}</span>{$cate.catename}</option>
+          {/if}
+          {/volist}
+          {notempty name="$params['cateid']"}<option value="">--请选择文章分类--</option>{/notempty}
+        </select>
+        <select class="form-control input-sm" name="pagesize" onchange="$('#articleForm').submit();">
+          <option value="10" selected="">每页10条</option>
+          <option value="20">每页20条</option>
+          <option value="50">每页50条</option>
+          <option value="100">每页100条</option>
+        </select>
+      </div>
+      <div class="row">
+        <table class="js-table-checkable table table-hover">
+          <thead>
+            <tr>
+              <th class="text-center" style="width: 70px;"> <label class="css-input css-checkbox css-checkbox-primary">
+                #
+                <span></span> </label>
+              </th>
+              <th style="width: 15%;">文章标题</th>
+              <th>所属分类</th>
+              <th class="hidden-xs" style="width: 20%;">添加/修改时间</th>
+			  <th style="width: 15%;">操作</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+          
+          {volist name="list" id="vo"}
+          <tr class="active">
+            <td class="text-center">
+              <label class="css-input css-checkbox css-checkbox-primary">
+                {$vo['id']}
+                <span></span>
+              </label>
+            </td>
+            <td><p class="font-w600 push-5">{$vo.title}</p></td>
+            <td><p class="text-muted remove-margin-b">{:getArticleCateName($vo.cateid)}</p></td>
+            <td class="hidden-xs"><em class="text-muted">{$vo['update_time']}</em></td>
+            <td>
+			  <a href="{:url($tablename.'/edit',['id'=>$vo['id']])}" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="修改"><i class="fa fa-pencil"></i></a>
+			  <a data-href="{:url($tablename.'/delete',['id'=>$vo['id']])}" class="btn btn-xs btn-default delete-one" type="button" data-toggle="tooltip" title="" data-original-title="删除"><i class="fa fa-times"></i></a>
+            </td>
+          </tr>
+          {/volist}
+          </tbody>
+          
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="dataTables_info" style="padding-top: 24px;">当前 <strong>{$list->currentPage()}</strong>/<strong>{$list->lastPage()}</strong> 共 <strong> {$list->total()}</strong>条记录</div>
+        </div>
+        <div class="col-sm-6"  style="text-align: right;">
+          <div class="dataTables_paginate paging_simple_numbers">
+            {$list->render()}
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </section>
+</div>
+{/block}
+{block name="footer"}
+<!-- Top Modal -->
+<!-- END Top Modal -->
+{/block}
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script src="{:Config('public')}assets/js/pages/pages_form_role.js"></script>
+<script>
+    $(function () {
+        // Init page helpers (Table Tools helper)
+        App.initHelpers('table-tools');
+        App.initHelpers('notify');
+
+        $(".delete-one").click(function(){
+            var url = $(this).attr("data-href");
+            if( !confirm('你确定要删除该条数据？') ){
+                return false;
+            }
+            getUrl(url);
+        });
+    });
+</script>
+{/block}

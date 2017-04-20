@@ -1,0 +1,103 @@
+﻿{extend name="public/base" /}
+
+{block name="title"}
+{$title}
+{assign name="groupnav" value="Master"/}
+{assign name="activenav" value="User/index"/}
+{/block}
+{block name="main"}
+<!-- Hero Content -->
+<div class="bg-primary-dark">
+  <section class="content content-full content-boxed">
+    <!-- Section Content -->
+    <div class="push-100-t push-50 text-center">
+      <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Contact Us.</h1>
+      <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Have an awesome idea for a project? Get in touch today.</h2>
+    </div>
+    <!-- END Section Content -->
+  </section>
+</div>
+<!-- END Hero Content -->
+<!-- Contact Form -->
+<div class="bg-white">
+  <section class="content content-boxed">
+    <!-- Section Content -->
+    <div class="row items-push push-50-t push-30">
+      <div class="col-md-6 col-md-offset-3">
+        <form class="js-validation-user-updatepwd form-horizontal push-10-t" action="{:url($tablename.'/updatepwd')}" method="post">
+          <div class="form-group">
+            <div class="col-xs-12">
+              <div class="form-material form-material-primary">
+                <input type="hidden" name="id" value="{:isset($info['id'])?$info['id']:''}">
+                <span>{:isset($info['username'])?$info['username']:''}</span>
+                <label for="username">用户名</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+              <div class="form-material form-material-primary">
+                <input class="form-control" type="text" id="rename" name="rename" placeholder="用户真实名称.."  value="{:isset($info['rename'])?$info['rename']:''}">
+                <label for="rename">称呼</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+              <div class="form-material form-material-primary">
+                <input class="form-control" type="password" id="ypassword" name="ypassword" placeholder="原来的登录密码..">
+                <label for="password">原登录密码</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+              <div class="form-material form-material-primary">
+                <input class="form-control" type="password" id="password" name="password" placeholder="新登录密码..">
+                <label for="password">新登录密码</label>
+              </div>
+            </div>
+          </div>
+		  <div class="form-group">
+            <div class="col-xs-12">
+              <div class="form-material form-material-primary">
+                <input class="form-control" type="password" id="repassword" name="repassword" placeholder="确认登录密码..">
+                <label for="password">确认登录密码</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+              <div class="form-material form-material-primary">
+                <input class="form-control" type="text" id="tel" name="tel" placeholder="联系方式.." value="{:isset($info['tel'])?$info['tel']:''}">
+                <label for="tel">联系电话</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+              <button class="btn btn-block btn-primary" type="submit"><i class="fa fa-send pull-left"></i>提交</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- END Section Content -->
+  </section>
+</div>
+<!-- END Contact Form -->
+<!-- Google Maps, initialized in js/pages/frontend_contact.js, for more examples you can check out https://hpneo.github.io/gmaps/ -->
+<div class="bg-white" id="js-map-contact" style="height: 350px;"></div>
+{/block}
+
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script src="{:Config('public')}assets/js/pages/pages_form_updatepwd.js"></script>
+<script>
+$(function () {
+	App.initHelpers('notify');
+});
+</script>
+{/block}

@@ -1,0 +1,159 @@
+{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Memberinfo"/}
+{assign name="activenav" value="Member/index"/}
+{/block}
+{block name="main"}
+<!-- Hero Content -->
+<div class="bg-primary-dark">
+    <section class="content content-full content-boxed">
+        <!-- Section Content -->
+        <div class="push-100-t push-50 text-center">
+            <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Contact Us.</h1>
+            <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Have an awesome idea for a project? Get in touch today.</h2>
+        </div>
+        <!-- END Section Content -->
+    </section>
+</div>
+<!-- END Hero Content -->
+<!-- Contact Form -->
+<div class="bg-white">
+    <section class="content content-boxed">
+        <!-- Section Content -->
+        <div class="row items-push push-50-t push-30">
+            <div class="col-md-6 col-md-offset-3">
+                <form class="js-validation-address form-horizontal push-10-t" action="{:url($tablename.'/modify')}" method="post">
+                    <input type="hidden" name="member_id" value="{$params['member_id']}" />
+                    <input type="hidden" name="id" value="{:isset($info['id'])?$info['id']:''}" />
+
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <div class="form-material form-material-primary">
+                                <input class="form-control" type="text" id="contant_person" name="contant_person" placeholder="联系人.." value="{:isset($info['contant_person'])?$info['contant_person']:''}">
+                                <label for="contant_person">联系人</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <div class="form-material form-material-primary">
+                                <input class="form-control" type="text" id="tel" name="tel" placeholder="电话.."  value="{:isset($info['tel'])?$info['tel']:''}">
+                                <label for="tel">联系电话</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top:5px;">
+                        <div class="col-xs-12">
+                            <div class="form-material form-material-primary">
+                                <label for="area_id">选择地区</label>
+                                <input type="hidden" name="area_id" id="area_id" value="{:isset($info['area_id'])?$info['area_id']:''}" />
+                                {eq name="$action" value="add"}
+                                <select class="form-control select-box" id="area_adss" size="1" onchange="checkArea(this)" style="width:30%;display: inline;float:left;margin-right: 10px;">
+                                    <option value="0">--请选择--</option>
+                                    {volist name="areaList" id="area"}
+                                    <option value="{$area.id}">{$area.catename}</option>
+                                    {/volist}
+                                </select>
+                                {else /}
+                                {volist name="areaList" id="list"}
+                                    <select class="form-control select-box" id="area_adss" size="1" onchange="checkArea(this)" style="width:30%;display: inline;float:left;margin-right: 10px;">
+                                        {volist name="list" id="area"}
+                                        <option value="{$area.id}">{$area.catename}</option>
+                                        {/volist}
+                                    </select>
+                                {/volist}
+                                {/eq}
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <div class="form-material form-material-primary">
+                                <input class="form-control" type="text" id="address" name="address" placeholder="详细地址(不包含省市区).." value="{:isset($info['address'])?$info['address']:''}">
+                                <label for="address">详细地址</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <div class="form-material form-material-primary">
+                                <label for="if_default">是否默认收货地址</label>
+                                <div>
+                                    <label class="css-input css-radio css-radio-primary push-10-r">
+                                        <input type="radio" value="1" name="if_default" {$info['if_default'] == 1 ? 'checked' : ''} {:isset($info['if_default']) ? '' : 'checked'}><span></span> 是
+                                    </label>
+                                    <label class="css-input css-radio css-radio-primary">
+                                        <input type="radio" value="0" name="if_default" {$info['if_default'] == 2 ? 'checked' : ''}><span></span> 否
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <button class="btn btn-block btn-primary" type="submit"><i class="fa fa-send pull-left"></i>提交</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-minw btn-info" type="button" onclick="javascript:history.go(-1);">返回</button>
+                        </div>
+                    </div>
+                    <input type="hidden" name="__token__" value="{$Request.token}" />
+                </form>
+            </div>
+        </div>
+        <!-- END Section Content -->
+    </section>
+</div>
+<!-- END Contact Form -->
+<!-- Google Maps, initialized in js/pages/frontend_contact.js, for more examples you can check out https://hpneo.github.io/gmaps/ -->
+<div class="bg-white" id="js-map-contact" style="height: 350px;"></div>
+{/block}
+
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script src="{:Config('public')}assets/js/pages/pages_form_address.js"></script>
+<script>
+    $(function () {
+        App.initHelpers('notify');
+    });
+    function checkArea(obj){
+        var id = $(obj).val();
+        var selectList = $(obj).nextAll();
+        for(var i=0;i<selectList.length;i++){
+            $(selectList[i]).remove();
+        }
+        $('#area_id').val('');
+        if(id !=0){
+            $.post('/admin/address/checkArea.html',{id:id},function(data){
+                var areajson = eval(data);//console.log(areajson);
+                if(areajson){
+                    if(areajson.res && areajson.res == 'final'){
+                        var selectBox = $('.select-box');
+                        var areaIdStr = '';
+                        for(var i=0;i<selectBox.length;i++){
+                            areaIdStr += $(selectBox[i]).val()+',';
+                        }
+                        areaIdStr = areaIdStr.substr(0,areaIdStr.length-1);
+                        $('#area_id').val(areaIdStr);
+                    }else{
+                        var str = '<select class="form-control select-box" size="1" onchange="checkArea(this)" style="width:30%;display: inline;float:left;margin-right: 10px;"><option value="0">--请选择--</option>';
+                        for(var i=0;i<areajson.length;i++){
+                            str += '<option value="'+areajson[i].id+'">'+areajson[i].catename+'</option>';
+                        }
+                        str += '</select>';
+                        $(obj).after(str);
+                    }
+                }
+            },'json');
+        }
+
+    }
+</script>
+{/block}

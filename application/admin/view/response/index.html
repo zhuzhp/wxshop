@@ -1,0 +1,124 @@
+{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Weixin"/}
+{assign name="activenav" value="Wxapi/index"/}
+{/block}
+{block name="main"}
+<div class="bg-primary-dark">
+    <section class="content content-full content-boxed">
+        <!-- Section Content -->
+        <div class="push-30-t push-20 text-center">
+            <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Support Center.</h1>
+            <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Building products is not our only job. We care about our clients.</h2>
+        </div>
+        <!-- END Section Content -->
+    </section>
+</div>
+<!-- END Hero Content -->
+<div class="bg-white">
+    <section class="content content-boxed overflow-hidden">
+        <div class="content-grid">
+                <div class="form-inline">
+                    <div class="input-group push-5">
+                        <a class="btn btn-sm btn-default" >【{$info.name}】{$title}</a>
+                    </div>
+                    <div class="input-group push-5">
+                        <a class="btn btn-sm btn-default" href="{:url('Wxset/index',['id'=>$info['id']])}">返回</a>
+                    </div>
+                </div>
+
+                <div class="row items-push text-center push-50" style="margin-top:50px;">
+                    <div class="col-xs-4 col-md-2 animated bounceIn" data-toggle="appear" data-offset="-100" data-class="animated bounceIn">
+                        <a class="btn" id="modal_text"  type="button">
+                            <div class="item item-circle bg-white border push-10">
+                                <i class="si si-vector text-default"></i>
+                            </div>
+                        </a>
+                        <div class="font-w600">文本回复</div>
+                    </div>
+                    <div class="col-xs-4 col-md-2 animated bounceIn" data-toggle="appear" data-offset="-100" data-class="animated bounceIn" data-timeout="150">
+                        <a class="btn" id ="modal_img" type="button">
+                            <div class="item item-circle bg-white border push-10">
+                                <i class="si si-badge text-flat"></i>
+                            </div>
+                         </a>
+                        <div class="font-w600">图文回复</div>
+                    </div>
+                    <div class="col-xs-4 col-md-2 animated bounceIn" data-toggle="appear" data-offset="-100" data-class="animated bounceIn" data-timeout="300">
+                        <div class="item item-circle bg-white border push-10">
+                            <i class="si si-chemistry text-smooth"></i>
+                        </div>
+                        <div class="font-w600">Creativity</div>
+                    </div>
+                    <div class="col-xs-4 col-md-2 animated bounceIn" data-toggle="appear" data-offset="-100" data-class="animated bounceIn" data-timeout="450">
+                        <div class="item item-circle bg-white border push-10">
+                            <i class="si si-heart text-city"></i>
+                        </div>
+                        <div class="font-w600">Passion</div>
+                    </div>
+                    <div class="col-xs-4 col-md-2 animated bounceIn" data-toggle="appear" data-offset="-100" data-class="animated bounceIn" data-timeout="600">
+                        <div class="item item-circle bg-white border push-10">
+                            <i class="si si-clock text-modern"></i>
+                        </div>
+                        <div class="font-w600">Time</div>
+                    </div>
+                    <div class="col-xs-4 col-md-2 animated bounceIn" data-toggle="appear" data-offset="-100" data-class="animated bounceIn" data-timeout="750">
+                        <div class="item item-circle bg-white border push-10">
+                            <i class="si si-drop text-warning"></i>
+                        </div>
+                        <div class="font-w600">Colors</div>
+                    </div>
+                </div>
+
+
+        </div>
+    </section>
+</div>
+{/block}
+{block name="footer"}
+<!-- Top Modal -->
+<!-- END Top Modal -->
+{/block}
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script src="{:Config('public')}assets/layer/layer.js"></script>
+<script>
+    $(function () {
+        // Init page helpers (Table Tools helper)
+        App.initHelpers('table-tools');
+        App.initHelpers('notify');
+
+        $(".disabled-one").click(function(){
+            var url = $(this).attr("data-href");
+            if( !confirm('你确定要要禁用该账号？') ){
+                return false;
+            }
+            getUrl(url);
+        });
+        $('#modal_text').click(function(){
+            layer.open({
+                title:'文本回复',
+                type: 2,
+                area: ['980px', '530px'],
+                fixed: false, //不固定
+                maxmin: true,
+                content: "{:url('Response/text',['type'=>'text','id'=>$info['id']])}"
+            });
+        });
+        $('#modal_img').click(function(){
+            layer.open({
+                title:'图文回复',
+                type: 2,
+                area: ['980px', '630px'],
+                fixed: false, //不固定
+                maxmin: true,
+                content: "{:url('Response/img',['type'=>'img','id'=>$info['id']])}"
+            });
+        })
+    });
+</script>
+{/block}

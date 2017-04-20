@@ -1,0 +1,24 @@
+        <ul class="nav-main">
+			{volist name="nav" id="vo"}
+			{empty name="vo[4]"}
+			{if condition="in_array($key,$auth_access) || $role_id==0"}
+            <li> <a class="{$activenav==$vo[1]?'active':''}" href="{:url($vo[1])}"><i class="si {$vo[5]}"></i><span class="sidebar-mini-hide">{$vo[0]}</span></a> </li>
+            {/if}
+            {else/}
+            {if condition="in_array($key,$auth_access) || $role_id==0"}
+            <li class="{$groupnav==$vo[1]?'open':''}"> <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si {$vo[5]}"></i><span class="sidebar-mini-hide">{$vo[0]}</span></a>
+              <ul>
+              	{volist name="vo[3]" id="v"}
+              	{if condition="in_array($key,$auth_access) || $role_id==0"}
+                <li> <a class="{$activenav==$v[1]?'active':''}" href="{:url($v[1])}">{$v[0]}</a> </li>    
+                {/if}   
+                {/volist}
+              </ul>
+            </li>
+            {/if}
+            {/empty}
+            {/volist}
+            <li class="nav-main-heading"><span class="sidebar-mini-hide">我的账号</span></li>
+            <li> <a href="{:url('Common/updatepwd')}"><i class="si si-lock"></i><span class="sidebar-mini-hide">修改密码</span></a> </li>
+            <li> <a href="{:url('Login/logout')}"><i class="si si-logout"></i><span class="sidebar-mini-hide">退出系统</span></a> </li>
+        </ul>

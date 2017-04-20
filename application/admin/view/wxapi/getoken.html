@@ -1,0 +1,111 @@
+{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Weixin"/}
+{assign name="activenav" value="Wxapi/index"/}
+{/block}
+{block name="main"}
+<!-- Hero Content -->
+<div class="bg-primary-dark">
+    <section class="content content-full content-boxed">
+        <!-- Section Content -->
+        <div class="push-100-t push-50 text-center">
+            <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Contact Us.</h1>
+            <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Have an awesome idea for a project? Get in touch today.</h2>
+        </div>
+        <!-- END Section Content -->
+    </section>
+</div>
+<!-- END Hero Content -->
+<!-- Contact Form -->
+<div class="bg-white">
+    <section class="content content-boxed">
+        <!-- Section Content -->
+        <div class="row items-push push-50-t push-30">
+            <div class="col-md-6 col-md-offset-3">
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <div class="form-material">
+                                <input class="form-control" type="text" id="name" name="name" readonly value="{:isset($info['name'])?$info['name']:''}" placeholder="输入名称..">
+                                <label for="name">名称</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="form-material">
+                                <input class="form-control" type="text" id="token" name="token" readonly value="{:isset($info['token'])?$info['token']:''}" placeholder="输入Token..">
+                                <label for="token">Token</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="form-material">
+                                <input class="form-control" type="text" id="encodingAESKey" name="encodingAESKey" readonly value="{:isset($info['encodingAESKey'])?$info['encodingAESKey']:''}" placeholder="输入EncodingAESKey..">
+                                <label for="encodingAESKey">EncodingAESKey</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="form-material">
+                                <input class="form-control" type="text" id="appId" name="appId" readonly value="{:isset($info['appId'])?$info['appId']:''}" placeholder="输入AppID..">
+                                <label for="appId">AppID</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="form-material">
+                                <input class="form-control" type="text" id="appSecret" name="appSecret" readonly value="{:isset($info['appSecret'])?$info['appSecret']:''}" placeholder="输入AppSecret..">
+                                <label for="appSecret">AppSecret</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="form-material">
+                                <textarea class="form-control" id="access_token" name="access_token" readonly rows="3" placeholder="点击获取Access_Token..">{:isset($info['access_token'])?$info['access_token']:''}</textarea>
+                                <label for="access_token">Access_Token</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="form-material">
+                                <input class="form-control" type="text" id="expires_in" name="expires_in" readonly value="{:isset($info['expires_in'])?$info['expires_in']:''}" placeholder="点击获取Expires_Time..">
+                                <label for="expires_in">Expires_Time</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <div class="form-group" style="padding-left:20%;">
+                        <div class="col-xs-3">
+                            <button class="btn btn-minw btn-info" type="button" onclick="javascript:history.go(-1);">返回</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- END Section Content -->
+    </section>
+</div>
+<!-- END Contact Form -->
+<!-- Google Maps, initialized in js/pages/frontend_contact.js, for more examples you can check out https://hpneo.github.io/gmaps/ -->
+<div class="bg-white" id="js-map-contact" style="height: 350px;"></div>
+{/block}
+
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script src="{:Config('public')}assets/js/pages/pages_form_token.js"></script>
+<script>
+    $(function () {
+        App.initHelpers('notify');
+    });
+
+</script>
+{/block}

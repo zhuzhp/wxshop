@@ -1,0 +1,109 @@
+﻿{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Master"/}
+{assign name="activenav" value="User/index"/}
+{/block}
+{block name="main"}
+<div class="bg-primary-dark">
+  <section class="content content-full content-boxed">
+    <!-- Section Content -->
+    <div class="push-30-t push-20 text-center">
+      <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Support Center.</h1>
+      <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Building products is not our only job. We care about our clients.</h2>
+    </div>
+    <!-- END Section Content -->
+  </section>
+</div>
+<!-- END Hero Content -->
+<div class="bg-white">
+  <section class="content content-boxed overflow-hidden">
+    <div class="content-grid">
+      <div class="form-inline">
+        <div class="input-group push-5"> <a class="btn btn-sm btn-default" href="{:url($tablename.'/add')}">添加{$title}</a></div>
+        <div class="input-group push-5">
+          <input type="text" class="form-control input-sm" placeholder="搜索用户名或电话" value="{:isset($params['key'])?$params['key']:''}">
+          <span class="input-group-btn">
+          <button class="btn btn-sm btn-default" type="button" onclick="var v=$(this).parent().prev().val(); location.href='{:url($tablename.'/index', u_pam($params, null, array('page','key')))}?key='+v;"> <i class="fa fa-search"></i> </button>
+          </span> </div>
+        <select class="form-control input-sm" onchange="location.href='{:url($tablename.'/index', u_pam($params, null, array('page','pagesize')))}?pagesize='+this.value">
+          <option value="10" {$params['pagesize']==10?'selected':''}>每页10条</option>
+        <option value="20" {$params['pagesize']==20?'selected':''}>每页20条</option>
+        <option value="50" {$params['pagesize']==50?'selected':''}>每页50条</option>
+        <option value="100" {$params['pagesize']==100?'selected':''}>每页100条</option>
+        </select>
+      </div>
+      <div class="row">
+        <table class="js-table-checkable table table-hover">
+          <thead>
+            <tr>
+              <th class="text-center" style="width: 70px;">#</th>
+              <th>名称</th>
+              <th style="width: 15%;">状态</th>
+              <th class="hidden-xs" style="width: 20%;">添加/修改时间</th>
+			  <th style="width: 15%;">操作</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+          
+          {volist name="list" id="vo"}
+          <tr>
+            <td class="text-center">
+            {$i}
+            </td>
+            <td><p class="font-w600 push-5">{$vo.username}</p>
+              <p class="text-muted remove-margin-b">联系人:{$vo.rename} 电话:{$vo.tel}</p></td>
+             <td>
+			 {neq name="vo.role_id" value="0"}<i data-href="{:url($tablename.'/check',['id'=>$vo['id']])}" class="si {$vo['state']==1?'si-check text-success':'si-close text-danger'}"></i>
+			 {else/}
+			  ---
+			  {/neq}
+			 </td>			
+            <td class="hidden-xs"><em class="text-muted">{$vo.update_time}</em> </td>
+            <td>
+              {neq name="vo.role_id" value="0"}
+			  <a href="{:url($tablename.'/edit',['id'=>$vo['id']])}" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="" data-original-title="修改"><i class="fa fa-pencil"></i></a>
+			  <a data-href="{:url($tablename.'/delete',['id'=>$vo['id']])}" class="btn btn-xs btn-default delete-one" type="button" data-toggle="tooltip" title="" data-original-title="删除"><i class="fa fa-times"></i></a>
+			  {else/}
+			  ---
+			  {/neq}
+            </td>
+          </tr>
+          {/volist}
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+{/block}
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script>
+            $(function () {
+                // Init page helpers (Table Tools helper)
+                App.initHelpers('table-tools');
+				App.initHelpers('notify');
+				
+				$(".si-check,.si-close").click(function(){
+					var url = $(this).attr("data-href");
+					if( !confirm('你确定要改变当前标状态？') ){
+						return false;
+					}
+					getUrl(url);
+				});
+				
+				$(".delete-one").click(function(){
+					var url = $(this).attr("data-href");
+					if( !confirm('你确定要删除该条数据？') ){
+						return false;
+					}
+					getUrl(url);
+				});
+            });            
+        </script>
+{/block}

@@ -1,0 +1,275 @@
+﻿{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Webdata"/}
+{assign name="activenav" value="Product/index"/}
+{/block}
+{block name="main"}
+<div class="bg-primary-dark">
+  <section class="content content-full content-boxed">
+    <!-- Section Content -->
+    <div class="push-30-t push-20 text-center">
+      <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Support Center.</h1>
+      <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Building products is not our only job. We care about our clients.</h2>
+    </div>
+    <!-- END Section Content -->
+  </section>
+</div>
+<!-- END Hero Content -->
+<div class="bg-white">
+  <section class="content content-boxed overflow-hidden">
+    <div class="content-grid">
+      <form id="sortForm" action="{:url('product_category/modifylistupdatesort')}" method="post">
+        <input type="hidden" name="controller" value="product_category">
+        <div class="form-inline">
+          <div class="input-group push-5">
+            <a onclick="add();" class="btn btn-sm btn-default" data-toggle="modal" data-target="#modal-top">添加{$title}</a>
+          </div>
+          <div class="input-group push-5">
+            <span style="display:inline-block; width:20px; text-align:center; color:#ddd;">|</span><button class="btn btn-sm btn-default" type="submit">修改排序</button>
+          </div>
+          <div class="input-group push-5">
+            <input type="text" class="form-control input-sm" placeholder="搜索分类名称" value="{:isset($params['key'])?$params['key']:''}">
+          <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" type="button" onclick="var v=$(this).parent().prev().val(); location.href='{:url('product_category/index', u_pam($params, null, array('page','key')))}?key='+v;"> <i class="fa fa-search"></i> </button>
+          </span>
+          </div>
+          <select class="form-control input-sm" onchange="location.href='{:url('product_category/index', u_pam($params, null, array('page','pagesize')))}?pagesize='+this.value">
+            <option value="10" {$params['pagesize']==10?'selected':''}>每页10条</option>
+            <option value="20" {$params['pagesize']==20?'selected':''}>每页20条</option>
+            <option value="50" {$params['pagesize']==50?'selected':''}>每页50条</option>
+            <option value="100" {$params['pagesize']==100?'selected':''}>每页100条</option>
+          </select>
+        </div>
+        <div class="row">
+          <table class="js-table-checkable table table-hover">
+            <thead>
+            <tr>
+              <th class="text-center" style="width: 10%;text-align:left;"># </th>
+              <th style="width: 10%;">排序</th>
+              <th>分类名称</th>
+              <th>父级分类</th>
+              <th style="width: 15%;">操作时间</th>
+              <th class="text-center" style="width: 120px;">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="list" id="vo"}
+            <tr class="list-box">
+              <td class="text-center"style="text-align:left;">
+                <i class="glyphicon glyphicon-menu-right fa-1x" data-index = "1" onclick="Unfolded(this,{$vo['id']},'{$vo["catename"]}')" ></i>
+              </td>
+              <td><input style="width:70px;" value="{$vo['sort']}" name="sort[{$vo['id']}]" /></td>
+              <td><p class="font-w600 push-10">{$vo['catename']}</p></td>
+              <td><p class="font-w600 push-10">无</p></td>
+              <td><em class="text-muted">{$vo['update_time']}</em> </td>
+              <td>
+                <button onclick="addsoncate({$vo['id']},'{$vo['catename']}');" data-toggle="modal" data-target="#modal-son" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="添加子分类" data-original-title="添加子分类"><i class="fa fa-plus fa-1x"></i></button>
+                <button onclick="edit({$vo['id']},'{$vo['catename']}');" data-toggle="modal" data-target="#modal-top" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="修改" data-original-title="修改"><i class="fa fa-pencil"></i></button>
+                <a data-href="{:url('product_category/delete',['id'=>$vo['id'],'controller'=>'product_category'])}" onclick="deleleCate(this)" class="btn btn-xs btn-default delete-one" type="button" data-toggle="tooltip" title="" data-original-title="删除"><i class="fa fa-times"></i></a>
+              </td>
+            </tr>
+            {/volist}
+            </tbody>
+
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="dataTables_info" style="padding-top: 24px;">当前 <strong>{$list->currentPage()}</strong>/<strong>{$list->lastPage()}</strong> 共 <strong> {$list->total()}</strong>条记录</div>
+          </div>
+          <div class="col-sm-6"  style="text-align: right;">
+            <div class="dataTables_paginate paging_simple_numbers">
+              {$list->render()}
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+{/block}
+{block name="footer"}
+<div class="modal fade" id="modal-son" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-top">
+    <div class="modal-content">
+      <div class="block block-themed block-transparent remove-margin-b">
+        <div class="block-header bg-primary-dark">
+          <ul class="block-options">
+            <li>
+              <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+            </li>
+          </ul>
+          <h3 class="block-title">添加商品子分类</h3>
+        </div>
+        <div class="block-content">
+          <div class="block-content block-content-narrow">
+            <form class="js-validation form-horizontal push-10-t" action="{:url('product_category/addsoncate')}" method="post" novalidate="novalidate">
+              <div class="form-group">
+                <div class="col-sm-9">
+                  <div class="form-material">
+                    <input type="hidden" name="controller" value="product_category">
+                    <input type="hidden" name="catetype" value="product">
+                    <input type="hidden" id="par-id" name="id" val="">
+                    <input class="form-control" type="text" readonly  value="" id="parent_cate">
+                    <label for="val-name">父类名称</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-9">
+                  <div class="form-material">
+                    <input class="form-control" type="text" id="cat-name" name="catename" placeholder="输入分类名称.">
+                    <label for="val-name">商品分类名称</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <button class="btn btn-sm btn-primary" id="addSonCate" type="submit">提交</button>
+                </div>
+              </div>
+              <input type="hidden" name="__token__" value="{$Request.token}" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Top Modal -->
+<div class="modal fade" id="modal-top" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-top">
+    <div class="modal-content">
+      <div class="block block-themed block-transparent remove-margin-b">
+        <div class="block-header bg-primary-dark">
+          <ul class="block-options">
+            <li>
+              <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+            </li>
+          </ul>
+          <h3 class="block-title">添加商品分类</h3>
+        </div>
+        <div class="block-content">
+          <div class="block-content block-content-narrow">
+            <form class="js-validation-role form-horizontal push-10-t" action="{:url('product_category/modify')}" method="post" novalidate="novalidate">
+              <div class="form-group">
+                <div class="col-sm-9">
+                  <div class="form-material">
+                    <input type="hidden" name="controller" value="product_category">
+                    <input type="hidden" name="catetype" value="product"/>
+                    <input type="hidden" id="val-id" name="id">
+                    <input class="form-control" type="text" id="val-name" name="catename" placeholder="输入分类名称.">
+                    <label for="val-name">商品分类名称</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <button class="btn btn-sm btn-primary" type="submit">提交</button>
+                </div>
+              </div>
+              <input type="hidden" name="__token__" value="{$Request.token}" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Top Modal -->
+{/block}
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script src="{:Config('public')}assets/js/pages/pages_form_category.js"></script>
+<script src="{:Config('public')}assets/js/pages/pages_form_soncategory.js"></script>
+<script>
+    $(function () {
+      // Init page helpers (Table Tools helper)
+      App.initHelpers('table-tools');
+      App.initHelpers('notify');
+      $("#sortForm").submit(function () {
+        if (!confirm('确定要修改排序？')) {
+          return false;
+        }
+        postListSort($(this));
+        return false;
+      });
+    });
+  function deleleCate(obj){
+    var url = $(obj).attr("data-href");
+    if( !confirm('你确定要删除该条数据？') ){
+      return false;
+    }
+    getUrl(url);
+  }
+  function addsoncate(id,catename)
+  {
+    $(".block-title").html('添加商品子分类');
+    $('#par-id').val(id);
+    $('#parent_cate').val(catename);
+    $('#cat-name').val('');
+  }
+  function edit(id,catename)
+  {
+    $(".block-title").html('修改商品分类');
+    $('#val-id').val(id);
+    $('#val-name').val(catename);
+  }
+  function add()
+  {
+    $('.block-title').html('添加商品分类');
+    $('#val-id').val('');
+    $('#val-name').val('');
+  }
+  function Unfolded(obj,id,catename){
+    var ofseLeft  = $(obj).parent('td').css('padding-left');
+    var index = $(obj).attr('data-index');
+    if(index == 1){
+      $.post('/admin/product_category/unfolded.html',{id:id},function(data){
+        var venjson = eval(data);
+        if(venjson){
+          console.log(venjson);
+          var html = '';
+          var padLeft = parseInt(ofseLeft) + 20;
+          for(var i=0; i<venjson.length;i++){
+            html += '<tr class="list-box">\
+                        <td style="text-align:left;padding-left:'+padLeft+'px;"><i class="glyphicon glyphicon-menu-right fa-1x" data-index = "1" onclick="Unfolded(this,'+venjson[i].id+',\''+venjson[i].catename+'\')"></i></td>\
+                         <td><input style="width:70px;"  value="'+venjson[i].sort+'" name="sort['+venjson[i].id+']" /></td>\
+                         <td><p class="font-w600 push-10">'+venjson[i].catename+'</p></td>\
+                         <td><p class="font-w600 push-10">'+catename+'</p></td>\
+                         <td><em class="text-muted">'+venjson[i].update_time+'</em> </td>\
+                         <td>\
+                            <button onclick="addsoncate('+venjson[i].id+',\''+venjson[i].catename+'\');" data-toggle="modal" data-target="#modal-son" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="添加子分类" data-original-title="添加子分类"><i class="fa fa-plus fa-1x"></i></button>\
+                            <button onclick="edit('+venjson[i].id+',\''+venjson[i].catename+'\');" data-toggle="modal" data-target="#modal-top" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="修改" data-original-title="修改"><i class="fa fa-pencil"></i></button>\
+                            <a data-href="/admin/product_category/delete/controller/product_category/id/'+venjson[i].id+'.html" onclick="deleleCate(this)" class="btn btn-xs btn-default delete-one" type="button" data-toggle="tooltip" title="删除" data-original-title="删除"><i class="fa fa-times"></i></a>\
+                         </td>\
+                       </tr>';
+          }
+          $(obj).parent('td').parent('tr').after(html);
+          $(obj).attr('data-index','0');
+        }
+      },'json');
+    }
+    else{
+      var trList = $(obj).parent('td').parent('tr').nextAll();
+      for(var i=0; i<trList.length; i++){
+        var tdLeft = $(trList[i]).children("td:first-child").css('padding-left');
+        if(parseInt(tdLeft) != parseInt(ofseLeft)){
+          if(parseInt(tdLeft) > parseInt(ofseLeft)){
+            $(trList[i]).remove();
+          }
+        }else{
+          break;
+        }
+      }
+      $(obj).attr('data-index','1');
+    }
+  }
+
+</script>
+{/block}

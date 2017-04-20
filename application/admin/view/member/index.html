@@ -1,0 +1,135 @@
+{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Memberinfo"/}
+{assign name="activenav" value="Member/index"/}
+{/block}
+{block name="main"}
+<div class="bg-primary-dark">
+    <section class="content content-full content-boxed">
+        <!-- Section Content -->
+        <div class="push-30-t push-20 text-center">
+            <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Support Center.</h1>
+            <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Building products is not our only job. We care about our clients.</h2>
+        </div>
+        <!-- END Section Content -->
+    </section>
+</div>
+<!-- END Hero Content -->
+<div class="bg-white">
+    <section class="content content-boxed overflow-hidden">
+        <div class="content-grid">
+            <form id="orderForm" action="{:url($tablename.'/index')}" method="get">
+                <div class="form-inline">
+                    <div class="input-group push-5">
+                        <a class="btn btn-sm btn-default">{$title}搜索</a>
+                        <span style="display:inline-block; width:20px; text-align:center; color:#ddd;">|</span>
+                    </div>
+                    <div class="input-group push-5">
+                        <input type="text" class="form-control input-sm" placeholder="搜索会员账号|昵称|电话" name="key" value="{:isset($params['key'])?$params['key']:''}">
+                          <span class="input-group-btn">
+                          <button class="btn btn-sm btn-default" type="button" onclick="$('#orderForm').submit();"> <i class="fa fa-search"></i> </button>
+                          </span>
+                    </div>
+                    <select class="form-control input-sm" name="member_status" onchange="$('#orderForm').submit();">
+                        {empty name="$params['member_status']"}<option value="">--请选择会员状态--</option>{else /}<option value="{$params['member_status']}">{$member_status[$params['member_status']]}</option>{/empty}
+                        {volist name="member_status_list" id="member"}
+                        {if condition="$member['id'] != $params['member_status']"}
+                        <option value="{$member.id}">{$member.status}</option>
+                        {/if}
+                        {/volist}
+                        {notempty name="$params['member_status']"}<option value="">--请选择会员状态--</option>{/notempty}
+                    </select>
+                    <select class="form-control input-sm" name="pagesize" onchange="$('#orderForm').submit();">
+                        <option value="10" selected="">每页10条</option>
+                        <option value="20">每页20条</option>
+                        <option value="50">每页50条</option>
+                        <option value="100">每页100条</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <table class="js-table-checkable table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center" style="width: 70px;">#</th>
+                            <th>会员账号</th>
+                            <th>性别</th>
+                            <th>昵称</th>
+                            <th>电话</th>
+                            <th>会员状态</th>
+                            <th class="hidden-xs" style="width: 20%;">注册时间</th>
+                            <th style="width: 15%;">操作</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {volist name="list" id="vo"}
+                        <tr class="active">
+                            <td><p class="font-w600 push-5">{$vo.id}</p></td>
+                            <td><p class="text-muted remove-margin-b">{$vo.username}</p></td>
+                            <td class="hidden-xs"><em class="text-muted">{$vo['sex']}</em></td>
+                            <td class="hidden-xs"><em class="text-muted">{$vo['nickname']}</em></td>
+                            <td class="hidden-xs"><em class="text-muted">{$vo['tel']}</em></td>
+                            <td class="hidden-xs"><em class="text-muted">{$vo['status']}</em></td>
+                            <td class="hidden-xs"><em class="text-muted">{$vo['update_time']}</em></td>
+                            <td>
+                                <a href="{:url('address/index',['id'=>$vo['id']])}" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="收货地址" data-original-title="收货地址"><i class="fa fa-truck fa-1x"></i></a>
+                                <a href="{:url($tablename.'/check',['id'=>$vo['id']])}" class="btn btn-xs btn-default" type="button" data-toggle="tooltip" title="查看详情" data-original-title="查看详情"><i class="glyphicon glyphicon-zoom-in fa-1x"></i></a>
+                                <a data-href="{:url($tablename.'/lock',['id'=>$vo['id']])}" class="btn btn-xs btn-default lock-one" type="button" data-toggle="tooltip" title="锁定" data-original-title="锁定"><i class="fa fa-lock fa-1x"></i></a>
+                                <a data-href="{:url($tablename.'/freeze',['id'=>$vo['id']])}" class="btn btn-xs btn-default freeze-one" type="button" data-toggle="tooltip" title="冻结" data-original-title="冻结"><i class="fa fa-user-times fa-1x"></i></a>
+                            </td>
+                        </tr>
+                        {/volist}
+                        </tbody>
+
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="dataTables_info" style="padding-top: 24px;">当前 <strong>{$list->currentPage()}</strong>/<strong>{$list->lastPage()}</strong> 共 <strong> {$list->total()}</strong>条记录</div>
+                    </div>
+                    <div class="col-sm-6"  style="text-align: right;">
+                        <div class="dataTables_paginate paging_simple_numbers">
+                            {$list->render()}
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+{/block}
+{block name="footer"}
+<!-- Top Modal -->
+<!-- END Top Modal -->
+{/block}
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+<script src="{:Config('public')}assets/js/pages/pages_form_role.js"></script>
+<script>
+    $(function () {
+        // Init page helpers (Table Tools helper)
+        App.initHelpers('table-tools');
+        App.initHelpers('notify');
+
+        $(".lock-one").click(function(){
+            var url = $(this).attr("data-href");
+            if( !confirm('你确定要锁定该会员吗？') ){
+                return false;
+            }
+            getUrl(url);
+        });
+        $(".freeze-one").click(function(){
+            var url = $(this).attr("data-href");
+            if( !confirm('你确定要冻结该会员吗？') ){
+                return false;
+            }
+            getUrl(url);
+        });
+    });
+</script>
+{/block}

@@ -1,0 +1,54 @@
+
+-- 角色表
+CREATE TABLE `hsq_role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) COMMENT '角色名称',
+  `remark` varchar(255) COMMENT '备注',
+  `update_time` int(11) COMMENT '更新时间',
+  `auth_access` text COMMENT '权限，数字标识',
+  `shop_id` int(11) COMMENT '店铺id',
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- 后台用户表
+CREATE TABLE `hsq_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) COMMENT '用户姓名',
+  `password` varchar(64) COMMENT '用户密码',
+  `role_id` int(11) COMMENT '用户角色',
+  `rename` varchar(32) COMMENT '称呼',
+  `tel` varchar(20) COMMENT '电话号码',
+  `shop_id` int(11) COMMENT '店铺id',
+  `state` int(1) COMMENT '状态1开启  0关闭',
+  `update_time` int(11) COMMENT '修改时间',
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `hsq_user` VALUES ('1', 'admin', '96e79218965eb72c92a549dd5a330112', '0', '黄是', '13885698756', '1', '1', '1482908393');
+
+-- 页面设置
+CREATE TABLE `hsq_pagesetting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) COMMENT '名称',
+  `key` varchar(100) COMMENT '键名',
+  `type` int(1) COMMENT '类型：0一个值，1多个值',
+  `fields` varchar(255) COMMENT '字段',
+  `update_time` int(11) COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 页面设置内容
+CREATE TABLE `hsq_pagesettingvalue` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) COMMENT '标题',
+  `entitle` varchar(100) COMMENT '副标题',
+  `info` varchar(255) COMMENT '简单说明',
+  `content` text COMMENT '详细内容带样式',
+  `image` varchar(100) COMMENT '图片',
+  `url` varchar(255) COMMENT '跳转路径',
+  `sort` int(11) COMMENT '排序',
+  `pagesettingid` int(11) COMMENT '对应设置id',
+  `update_time` int(11) COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

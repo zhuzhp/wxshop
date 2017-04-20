@@ -1,0 +1,186 @@
+﻿{extend name="public/base" /}
+
+{block name="title"}
+{$title}列表
+{assign name="groupnav" value="Master"/}
+{assign name="activenav" value="Role/index"/}
+{/block}
+{block name="main"}
+<div class="bg-primary-dark">
+                    <section class="content content-full content-boxed">
+                        <!-- Section Content -->
+                        <div class="push-30-t push-20 text-center">
+                            <h1 class="h2 text-white push-10 visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Support Center.</h1>
+                            <h2 class="h5 text-white-op visibility-hidden" data-toggle="appear" data-class="animated fadeInDown">Building products is not our only job. We care about our clients.</h2>
+                        </div>
+                        <!-- END Section Content -->
+                    </section>
+                </div>
+				<form action="{:url($tablename.'/modifyrole',['id'=>$info['id']])}" method="post">
+                <!-- END Hero Content -->                
+                <div class="bg-white">
+                	<section class="content content-boxed overflow-hidden">
+	                	<div class="content-grid">
+	                		<div class="row">
+	                			<table class="js-table-sections table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 70px;"></th>                                        
+                                        <th>名称</th>
+                                        <th style="width: 15%;">上级菜单</th>
+                                        <th class="hidden-xs" style="width: 15%;">地址</th>
+                                    </tr>
+                                </thead>
+								{volist name="nav" id="vo" key="k"}
+								{assign name="fk" value="$key"/}
+								{empty name="vo[4]"}								
+                                <tbody class="js-table-sections-header">
+                                    <tr>                         
+                                        <td class="text-center">                                        
+                                            <i class="fa fa-angle-right"></i>                                                                                        
+                                        </td>
+                                        <td class="font-w600">
+                                        	<label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                                <input type="checkbox" {if condition="in_array($key,$access)"}checked="true"{/if} value="{$fk}" name="role[]" class="{$fk}" check="ch{$fk}"><span></span>
+                                            </label>
+                                            {$vo[0]}</td>
+                                        <td>
+                                            --
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <em class="text-muted">{$vo[1]}</em>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+									{volist name="vo[3]" id="v"}
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">
+                                        	<label class="css-input css-checkbox css-checkbox-primary">
+                                                <input type="checkbox" {if condition="in_array($key,$access)"}checked="true"{/if} name="role[]" value="{$key}" class="ch{$fk}" check="{$fk}"><span></span>
+                                            </label>
+                                        {$v[0]}</td>
+                                        <td>
+                                            <small>{$vo[0]}</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">{$v[1]}</small>
+                                        </td>
+                                    </tr>
+									{/volist}
+                                </tbody>
+                                {else/}
+                                {volist name="vo[3]" id="v"}
+                                {assign name="k" value="$key"/}
+                                <tbody class="js-table-sections-header">
+                                    <tr>                         
+                                        <td class="text-center">                                        
+                                            <i class="fa fa-angle-right"></i>                                                                                        
+                                        </td>
+                                        <td class="font-w600">
+                                        	<label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                                <input type="checkbox" {if condition="in_array($key,$access)"}checked="true"{/if} value="{$key}" name="role[]" class="{$k}" check="ch{$k}"><span></span>
+                                                <input type="checkbox" {if condition="in_array($key,$access)"}checked="true"{/if} name="role[]" value="{$fk}" class="{$k}">
+                                            </label>
+                                            {$v[0]}</td>
+                                        <td>
+                                            {$vo[0]}
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <em class="text-muted">{$vo[1]}</em>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+									{volist name="v[3]" id="chv"}									
+                                    <tr>
+                                        <td class="text-center"></td>
+                                        <td class="font-w600 text-success">
+                                        	<label class="css-input css-checkbox css-checkbox-primary">
+                                                <input type="checkbox" {if condition="in_array($key,$access)"}checked="true"{/if} name="role[]" value="{$key}" class="ch{$k}" check="{$k}"><span></span>
+                                            </label>
+                                        {$chv[0]}</td>
+                                        <td>
+                                            <small>{$v[0]}</small>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <small class="text-muted">{$chv[1]}</small>
+                                        </td>
+                                    </tr>
+									{/volist}
+                                </tbody>
+                                {/volist}
+								{/empty}
+            					{/volist}                              
+                            </table>
+	                		</div>
+	                	</div>                	
+                	</section>
+                </div>
+				<div class="bg-gray-lighter">
+                    <section class="content content-full content-boxed">
+                        <!-- Section Content -->
+                        <div class="push-20-t push-20 text-center">
+                            <h3 class="h4 push-20 animated fadeIn" data-toggle="appear">确定你要提交以上权限?</h3>
+                            <button type="submit" class="btn btn-rounded btn-noborder btn-lg btn-success animated bounceIn">提交</button>
+                        </div>
+                        <!-- END Section Content -->
+                    </section>
+                </div>
+				</form>
+{/block}
+
+{block name="script"}
+<script src="{:Config('public')}assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{:Config('public')}assets/js/common.js"></script>
+	<script>
+            $(function () {
+                // Init page helpers (Table Tools helper)
+                App.initHelpers('table-tools');
+                App.initHelpers('notify');
+                $(".remove-margin-b input[type='checkbox']").change(function(){
+                	var checkval = $(this).attr("check");
+					var checkclass = $(this).attr("class");
+                	var check = $(this).is(':checked');
+					if(checkval){
+						$("input."+checkval).prop("checked",check);
+						$("input."+checkclass).prop("checked",check);
+					}
+                });
+                $(".text-success input[type='checkbox']").change(function(){
+                	var checkval = $(this).attr("check");
+                	var checkclass = $(this).attr("class");
+                	var check = false;
+                	$("input."+checkclass).each(function(){
+                    	if($(this).is(':checked')){
+                			check = true;
+                    	}
+                	});
+					if(checkval){
+						$("input."+checkval).prop("checked",check);
+					}
+                });
+                $('form').submit(function() {
+                	var url = $(this).attr('action');
+      				blockBody();
+                	$.ajax({
+    					cache: true,
+    	                type: "POST",
+    	                url:url,
+    	                data:$(this).serialize(),
+    	                async: false,
+    	                error: function(request) {
+    	                    alert("Connection error");
+    	                },
+    	                success: function(data) {
+    						blockBodyRemove();
+    	                    errorMesg(data);
+    	                }
+    				  });
+              	  return false;
+              	});
+            });
+        </script>
+	
+{/block}
